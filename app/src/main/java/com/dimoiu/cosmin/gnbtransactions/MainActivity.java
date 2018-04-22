@@ -13,6 +13,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
+    /* This is the main activity where are displayed all transactions. Here we use custom AsyncTasks to bring data from the given web services. */
+
 public class MainActivity extends AppCompatActivity{
     GetExchangeRatesAsyncTask getExchangeRatesAsyncTask;
     GetTransactionsAsyncTask getTransactionsAsyncTask;
@@ -21,9 +23,14 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        /* First we try to read all exchange rates from the given web service using a dedicated AsyncTask. */
         getExchangeRatesAsyncTask= (GetExchangeRatesAsyncTask) new GetExchangeRatesAsyncTask((List<ExchangeRate> output) -> {
             Exchange.setExchangeRates(output);
 
+            /* After that AsyncTask finishes the job in background, in post execute we try to get all the transactions from the given web service using another dedicated AsyncTask.
+               We do that here because the second AsyncTask needs data given by the first one. This means it has to wait until the first one finishes.
+               When the second AsyncTask finishes, in post execute we modify the UI with data retrieved from both AsyncTasks.*/
             getTransactionsAsyncTask= (GetTransactionsAsyncTask) new GetTransactionsAsyncTask((HashMap<String,List<Transaction>> result)->{
                 HashMap<String,List<Transaction>> transactions=result;
                 ListView listView=findViewById(R.id.transactions);

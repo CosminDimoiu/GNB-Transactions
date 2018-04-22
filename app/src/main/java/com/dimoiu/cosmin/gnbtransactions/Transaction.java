@@ -1,5 +1,7 @@
 package com.dimoiu.cosmin.gnbtransactions;
 
+/* This class is meant for storing transactions from the provided web service. */
+
 public class Transaction{
     private String code;
     private double amount;

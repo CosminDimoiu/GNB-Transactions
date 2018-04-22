@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/* This is the activity that I use to show all transactions for a certain product. Also to show the total amount of those transactions.*/
+
 public class TransactionActivity extends AppCompatActivity {
 
     @Override

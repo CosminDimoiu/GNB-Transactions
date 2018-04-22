@@ -11,6 +11,8 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+/* This is the class that I use to get data from any web service. */
+
 public class JsonFeed {
 
     private String url;

@@ -1,5 +1,7 @@
 package com.dimoiu.cosmin.gnbtransactions;
 
+/* This class is meant for storing exchange rates from the provided web service. */
+
 public class ExchangeRate {
     private String fromCurrency;
     private String toCurrency;

@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+/* This is an AsyncTask used to get transactions from the given web service. */
+
 public class GetTransactionsAsyncTask extends AsyncTask<String, Void, HashMap<String,List<Transaction>>>{
 
     public interface GetTransactionResponse {

@@ -7,6 +7,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+/* This is an AsyncTask used to get exchange rates from the given web service. */
+
 public class GetExchangeRatesAsyncTask extends AsyncTask<String,Void,List<ExchangeRate>>{
 
     public interface GetExchangeRatesResponse {
